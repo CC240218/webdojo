@@ -1,0 +1,119 @@
+{
+  "dataUser": [
+    {
+      "idComponent": "name",
+      "value": "Rafael Santos"
+    },
+    {
+      "idComponent": "email",
+      "value": "teste@test.com"
+    },
+    {
+      "idComponent": "phone",
+      "value": "11999999999"
+    }
+  ],
+  "typeFiles": [
+    {
+      "type": "PDF",
+      "file": "lorem_document.pdf"
+    },
+    {
+      "type": "PNG",
+      "file": "actions.png"
+    },
+    {
+      "type": "JPG",
+      "file": "eu.jpeg"
+    }
+  ],
+  "tagsTec": [
+    {
+      "tag": "Cypress"
+    },
+    {
+      "tag": "JavaScript"
+    },
+    {
+      "tag": "Manual Testing"
+    }
+  ],
+  "discovery": [
+    "Instagram",
+    "YouTube",
+    "LinkedIn",
+    "Indicação de Amigo",
+    "Udemy"
+  ],
+  "longTxt": {
+    "msgSuccess": "Sua solicitação de consultoria foi enviada com sucesso! Em breve, nossa equipe entrará em contato através do email fornecido.",
+    "textDetails": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. \nVestibulum finibus ipsum quis rutrum ullamcorper. \nPraesent interdum condimentum leo sed rhoncus. Cras tempor efficitur pharetra. Aenean sagittis purus eget nisi elementum semper."
+  },
+  "errMsgs": [
+    {
+      "idComponent": "name",
+      "emptName": "Campo obrigatório"
+    },
+    {
+      "idComponent": "email",
+      "emptEmail": "Campo obrigatório"
+    },
+    {
+      "emptTerms": "Você precisa aceitar os termos de uso"
+    }
+  ],
+  "typePerson": [
+    {
+      "type": "CPF",
+      "person": "Pessoa Física",
+      "num": "12345678909",
+      "mask": "123.456.789-09"
+    },
+    {
+      "type": "CNPJ",
+      "person": "Pessoa Jurídica",
+      "num": "12345678000190",
+      "mask": "12.345.678/0001-90"
+    }
+  ],
+  "typeConsultory": [
+    "individual",
+    "inCompany"
+  ],
+  "terms": {
+    "acept": true
+  },
+  "login": {
+    "user": "Fernando Papito",
+    "email": "papito@webdojo.com",
+    "pass": "katana123",
+    "alertErr": {
+      "forbiden": "Acesso negado! Tente novamente.",
+      "errInvalidEmail": "Hmm... esse email parece estar errado 🤔",
+      "emptEmail": "Ei, não esqueça de digitar seu email!",
+      "emptPass": "Você precisa de uma senha para entrar! 🔒"
+    }
+  },
+  "adress": [
+    {
+      "id": "street",
+      "value": "Rua Almirante Tamandaré"
+    },
+    {
+      "id": "neighborhood",
+      "value": "Centro"
+    },
+    {
+      "id": "city",
+      "value": "Paulista"
+    },
+    {
+      "id": "state",
+      "value": "PE"
+    },
+    {
+      "id": "cep",
+      "zipCode": "53401010"
+    }
+  ]
+}
