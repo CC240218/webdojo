@@ -34,8 +34,7 @@ describe('Automação do chat de consultar status de entrega', () => {
       cy.clickOptions('Sim, está certo!')
       cy.messageUserEntry('Sim, está certo!')
       cy.messageBotEntry('Perfeito! Estou consultando as informações nos Correios... Só um instante. 📦🔍')
-      cy.wait(3000)
-      cy.messageBotEntry(cenario.message)
+      cy.messageBotEntry(cenario.message);
 
 
     });

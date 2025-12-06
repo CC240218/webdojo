@@ -339,7 +339,8 @@ Cypress.Commands.add('openChat', () => {
 });
 
 Cypress.Commands.add('messageBotEntry', (msgChat) => {
-    cy.contains('.rcb-bot-message', msgChat).should('be.visible')
+    cy.contains('.rcb-bot-message', msgChat, { timeout: 7000 })
+        .should('be.visible')
 });
 
 Cypress.Commands.add('messageOptions', (respChat) => {
@@ -351,19 +352,18 @@ Cypress.Commands.add('clickOptions', (optClick) => {
 });
 
 Cypress.Commands.add('envCodTrak', (text) => {
-    cy.wait(2000)
-    cy.get('.rcb-chat-input').type(text)
+    cy.get('.rcb-chat-input', { timeout: 4000 }).type(text)
     cy.get('.rcb-send-button').click()
 });
 
-Cypress.Commands.add('messageUserEntry', (userChat)=>{
+Cypress.Commands.add('messageUserEntry', (userChat) => {
     cy.contains('.rcb-user-message-entry', userChat)
-    .should('be.visible')
+        .should('be.visible')
 })
 
 
 //                                  =================           
-//                                   === Helpers ===                    //
+//                                   === Helpers ===                    
 Cypress.Commands.add('login', () => {
     cy.startPage()
     cy.loginSubmit('papito@webdojo.com', 'katana123')
