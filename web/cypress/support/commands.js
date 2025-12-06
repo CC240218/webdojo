@@ -19,7 +19,7 @@
 //
 // -- This is a dual command --
 // Cypress.Commands.add('dismiss', { prevSubject: 'optional'}, (subject, options) => { ... })
-//
+// 
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
@@ -34,8 +34,6 @@ Cypress.Commands.add('startPage', () => {
     cy.visit('/')
     cy.contains('h2', 'Acesse sua conta')
         .should('be.visible')
-
-
 
 });
 
@@ -334,6 +332,33 @@ Cypress.Commands.add('alertMsg', (msg) => {
     cy.on('window:alert', (msgAlert) => {
         expect(msgAlert).to.equal(msg)
     })
+});
+
+Cypress.Commands.add('openChat', () => {
+    cy.get('button[aria-label="Open Chat"]').click()
+});
+
+Cypress.Commands.add('messageBotEntry', (msgChat) => {
+    cy.contains('.rcb-bot-message', msgChat).should('be.visible')
+});
+
+Cypress.Commands.add('messageOptions', (respChat) => {
+    cy.contains('.rcb-options', respChat).should('be.visible')
+});
+
+Cypress.Commands.add('clickOptions', (optClick) => {
+    cy.contains('.rcb-options', optClick).click()
+});
+
+Cypress.Commands.add('envCodTrak', (text) => {
+    cy.wait(2000)
+    cy.get('.rcb-chat-input').type(text)
+    cy.get('.rcb-send-button').click()
+});
+
+Cypress.Commands.add('messageUserEntry', (userChat)=>{
+    cy.contains('.rcb-user-message-entry', userChat)
+    .should('be.visible')
 })
 
 

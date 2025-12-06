@@ -40,6 +40,11 @@ declare namespace Cypress {
     btnSearchCep(nameButtonCep: string): Chainable<void>;
     assInputValue(idInput: string, value: string): Chainable<void>;
     alertMsg(msg: String): Chainable<void>;
- 
+    openChat(): Chainable<void>;
+    messageBotEntry(msgChat: String): Chainable<void>;
+    clickOptions(optClick: String): Chainable<void>;
+    envCodTrak(placeh: String, text: String): Chainable<void>;
+    messageUserEntry(userChat: String): Chainable<void>;
+
   }
 }

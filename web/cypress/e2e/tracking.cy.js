@@ -10,14 +10,14 @@ describe('Automação do chat de consultar status de entrega', () => {
   ]
 
   beforeEach(() => {
-    cy.visit('/')
+    cy.startPage()
   })
 
   cenarios.forEach(function (cenario) {
 
     it(cenario.nametest, () => {
 
-      cy.viewport('iphone-xr');
+      //cy.viewport('iphone-xr');
 
       cy.openChat();
       cy.messageBotEntry('Olá! Tudo bem? Posso te ajudar a consultar o status da sua encomenda?')
@@ -26,7 +26,7 @@ describe('Automação do chat de consultar status de entrega', () => {
       cy.clickOptions('Sim, por favor!')
       cy.messageUserEntry('Sim, por favor!')
       cy.messageBotEntry('Ótimo! Por favor, digite o código de rastreio da sua encomenda:')
-      cy.typeEnv(cenario.codTraking)
+      cy.envCodTrak(cenario.codTraking)
       cy.messageUserEntry(cenario.codTraking)
       cy.messageBotEntry(`Confirmando: você informou o código de rastreio ${cenario.codTraking}. Está tudo certo?`)
       cy.messageOptions('Sim, está certo!')
@@ -34,9 +34,19 @@ describe('Automação do chat de consultar status de entrega', () => {
       cy.clickOptions('Sim, está certo!')
       cy.messageUserEntry('Sim, está certo!')
       cy.messageBotEntry('Perfeito! Estou consultando as informações nos Correios... Só um instante. 📦🔍')
-      cy.messageBotEntry(cenario.message, 7000)
+      cy.wait(3000)
+      cy.messageBotEntry(cenario.message)
 
 
     });
-  })
+  });
+
+  // it.only('testLab', () => {
+  //   cy.openChat()
+  //   cy.messageBotEntry('Olá! Tudo bem? Posso te ajudar a consultar o status da sua encomenda?')
+  //   cy.messageOptions('Sim, por favor!')
+  //   cy.clickOptions('Sim, por favor!')
+  //   cy.messageUserEntry('Sim, por favor!')
+  //   cy.envCodTrak('12345678')
+  // })
 })
