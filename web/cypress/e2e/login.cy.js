@@ -4,11 +4,10 @@ let loginUser;
 
 describe('Login', () => {
 
-
-
   beforeEach(() => {
     cy.startPage();
     loginUser = JSON.parse(JSON.stringify(login)) // Clone da massa de teste
+
   })
 
   context('sucess', () => {
