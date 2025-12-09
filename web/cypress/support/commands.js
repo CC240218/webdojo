@@ -320,7 +320,7 @@ Cypress.Commands.add('btnSearchCep', (nameButtonCep) => {
 });
 
 Cypress.Commands.add('assInputValue', (idInput, value) => {
-    cy.get(`#${idInput}`, {timeout: 8000})
+    cy.get(`#${idInput}`, { timeout: 8000 })
         .should('have.value', value)
 });
 
@@ -362,10 +362,9 @@ Cypress.Commands.add('messageUserEntry', (userChat) => {
 
 //                                  =================           
 //                                   === Helpers ===                    
-Cypress.Commands.add('login', () => {
-    cy.startPage()
-
-    let token = 'e1033d63a53fe66c0fd3451c7fd8f617'
+Cypress.Commands.add('login', (init = false) => {
+    if (init == false) {
+        let token = 'e1033d63a53fe66c0fd3451c7fd8f617'
         cy.setCookie('login_date', today());
 
         cy.visit('/dashboard', {
@@ -373,6 +372,11 @@ Cypress.Commands.add('login', () => {
                 win.localStorage.setItem('token', token)
             }
         })
+    }else if (init == true){
+        cy.startPage()
+        cy.loginSubmit('papito@webdojo.com', 'katana123')
+    }
+
 })
 
 Cypress.Commands.add('preencherFormulario', (data) => {
@@ -411,6 +415,4 @@ Cypress.Commands.add('preencherFormulario', (data) => {
 
 //                                 ==== End Helpers ====
 
-
-// teste login só com credencias no application
 
