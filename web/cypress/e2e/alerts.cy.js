@@ -47,8 +47,4 @@ describe('Validando alertas do browser', () => {
 
         cy.contains('button', 'Mostrar Prompt').click();
     })
-
-    // it.only('testLab', () => {
-    //   cy.startPage();
-    // })
 })
