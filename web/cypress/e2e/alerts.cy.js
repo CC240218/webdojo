@@ -14,7 +14,7 @@ describe('Validando alertas do browser', () => {
 
 
 
-    it.only('Deve validar um alerta simples', () => {
+    it('Deve validar um alerta simples', () => {
         cy.on('window:alert', (msg) => {
             expect(msg).to.equal('Olá QA, eu sou um Alert Box!')
         })
