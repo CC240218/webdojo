@@ -366,7 +366,7 @@ Cypress.Commands.add('messageUserEntry', (userChat) => {
 //                                   === Helpers ===                    
 Cypress.Commands.add('login', () => {
     cy.startPage()
-    cy.loginSubmit('papito@webdojo.com', 'katana123')
+    cy.loginSubmit('papito@webdojo.com','katana123')
 })
 
 Cypress.Commands.add('preencherFormulario', (data) => {
