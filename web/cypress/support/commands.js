@@ -322,13 +322,13 @@ Cypress.Commands.add('btnSearchCep', (nameButtonCep) => {
 });
 
 Cypress.Commands.add('assInputValue', (idInput, value) => {
-    cy.get(`#${idInput}`)
+    cy.get(`#${idInput}`, {timeout: 7000})
         .should('have.value', value)
 });
 
 //                                  ========================
 //                                   === Browser Alerts ===
-Cypress.Commands.add('alertMsg', (msg) => {
+Cypress.Commands.add('alertWindow', (msg) => {
     cy.on('window:alert', (msgAlert) => {
         expect(msgAlert).to.equal(msg)
     })
