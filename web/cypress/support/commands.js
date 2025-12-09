@@ -25,7 +25,7 @@
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 /// <reference types="cypress" />
 import 'cypress-real-events'
-import { toDayFormat } from './utils'
+import { toDayFormat as today } from './utils'
 
 
 Cypress.Commands.add('startPage', () => {
@@ -322,7 +322,7 @@ Cypress.Commands.add('btnSearchCep', (nameButtonCep) => {
 });
 
 Cypress.Commands.add('assInputValue', (idInput, value) => {
-    cy.get(`#${idInput}`, {timeout: 7000})
+    cy.get(`#${idInput}`, {timeout: 8000})
         .should('have.value', value)
 });
 
@@ -366,7 +366,15 @@ Cypress.Commands.add('messageUserEntry', (userChat) => {
 //                                   === Helpers ===                    
 Cypress.Commands.add('login', () => {
     cy.startPage()
-    cy.loginSubmit('papito@webdojo.com','katana123')
+
+    let token = 'e1033d63a53fe66c0fd3451c7fd8f617'
+        cy.setCookie('login_date', today());
+
+        cy.visit('/dashboard', {
+            onBeforeLoad(win) {
+                win.localStorage.setItem('token', token)
+            }
+        })
 })
 
 Cypress.Commands.add('preencherFormulario', (data) => {
@@ -404,3 +412,7 @@ Cypress.Commands.add('preencherFormulario', (data) => {
 })
 
 //                                 ==== End Helpers ====
+
+
+// teste login só com credencias no application
+
