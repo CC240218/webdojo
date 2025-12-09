@@ -29,8 +29,6 @@ import { toDayFormat as today } from './utils'
 
 
 Cypress.Commands.add('startPage', () => {
-
-    cy.viewport(1440, 900)
     cy.visit('/')
     cy.contains('h2', 'Acesse sua conta')
         .should('be.visible')
